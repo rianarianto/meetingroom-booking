@@ -1,90 +1,81 @@
-# Laravel SB Admin 2
+# Meeting Room Booking System
 
-SB Admin 2 for Laravel.
+A web-based application for managing and booking meeting rooms efficiently. Built with **Laravel 9** and **SB Admin 2** dashboard template.
 
-| Laravel Version | Branch | Support     |
-|-----------------|--------|-------------|
-| 9.0             | master |             |
-| 8.0             | v8.0   |             |
-| 7.0             | v7.0   | End of life |
-| 6.0             | v6.0   | End of life |
-| 5.8             | v5.8   | End of life |
+## Features
 
-## Requirements
+- **Room Management**: Add, edit, and manage meeting rooms with details like capacity and location.
+- **Booking System**: 
+    - Real-time room availability check.
+    - Automated validation to prevent booking overlaps (time conflicts).
+    - Track booking status, division, and meeting details.
+- **Room Types**: Categorize rooms (e.g., Meeting Room, Discussion Room).
+- **Dashboard**: Professional admin panel powered by SB Admin 2.
+- **User Management**: Secure authentication and profile management.
 
-- PHP >= 8.0
-- BCMath PHP Extension
-- Ctype PHP Extension
-- JSON PHP Extension
-- Mbstring PHP Extension
-- OpenSSL PHP Extension
-- PDO PHP Extension
-- Tokenizer PHP Extension
-- XML PHP Extension
+## Tech Stack
+
+- **Framework**: Laravel 9.x
+- **Frontend**: Bootstrap 4 (SB Admin 2)
+- **Database**: MySQL
+- **Dependencies**: 
+    - Laravel UI (for authentication)
+    - Carbon (for date/time handling)
+    - EasyNav (for navigation management)
 
 ## Installation
 
-- Clone the repo and `cd` into it
-- Run `composer install`
-- Rename or copy `.env.example` file to `.env`
-- Run `php artisan key:generate`
-- Set your database credentials in your `.env` file
+Follow these steps to set up the project locally:
 
-## Note
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/rianarianto/meetingroom-booking.git
+   cd meetingroom-booking
+   ```
 
-Recommend to install this preset on a project that you are starting from scratch, otherwise your project's design might break.
+2. **Install Dependencies**
+   ```bash
+   composer install
+   npm install && npm run dev
+   ```
 
-If you found this project useful, then please consider giving it a :star:
+3. **Configure Environment**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+   *Edit `.env` and set your database credentials.*
+
+4. **Run Migrations and Seeders**
+   ```bash
+   php artisan migrate --seed
+   ```
+   *This will create the database tables and populate them with initial data (Admin user, time slots, and room types).*
+
+5. **Run the Application**
+   ```bash
+   php artisan serve
+   ```
+
+## Default Credentials
+
+After running the seeders, you can log in with:
+- **Email**: `admin@admin.com`
+- **Password**: `password`
+
+## Project Structure (Key Files)
+
+- `app/Http/Controllers/BookingController.php`: Core logic for booking validation and management.
+- `database/migrations/`: Database schema definitions.
+- `database/seeders/`: Initial data population.
+- `resources/views/booking/`: Frontend views for the booking system.
 
 ## Credits
 
-Laravel SB Admin 2 uses some open-source third-party libraries/packages, many thanks to the web community.
-
-- Laravel - Open source framework.
-- LaravelEasyNav - Making managing navigation in Laravel easy.
-- SB Admin 2 - Thanks to Start Bootstrap.
-
-
-## 💰 Donation
-
-If you found this project helpful or you learned something from the source code and want to thank me, consider buying me a cup of :coffee:
-
-* **[Donate $5](https://www.paypal.me/aleckrh/USD5)**: Thank's for creating this project, here's a coffee or juice or beer for you!
-* **[Donate $10](https://www.paypal.me/aleckrh/USD10)**: Wow, I am stunned. Let me take you to the movies.
-* **[Donate $15](https://www.paypal.me/aleckrh/USD15)**: I really appreciate your work, let's grab some lunch!
-* **[Donate $20](https://www.paypal.me/aleckrh/USD20)**: That's some awesome stuff you did right there, Pizza/Burger is on me!
-
-
-## Preview
-
-`login`
-
-<img src="https://imgur.com/YjGp6Sbl.png">
-
-***
-
-`register`
-
-<img src="https://imgur.com/Wj09cu4l.png">
-
-***
-
-`dashboard`
-
-<img src="https://imgur.com/CrmOfT5l.png">
-
-***
-
-`profile`
-
-<img src="https://imgur.com/5t4eS1rl.png">
-
-***
-
-`logout`
-
-<img src="https://imgur.com/d9JclOYl.png">
+- [Laravel](https://laravel.com/)
+- [SB Admin 2](https://startbootstrap.com/theme/sb-admin-2)
+- [Laravel SB Admin 2 Preset](https://github.com/aleckrh/laravel-sb-admin-2)
 
 ## License
 
-Licensed under the MIT license.
+This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
